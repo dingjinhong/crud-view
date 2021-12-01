@@ -3,6 +3,7 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from './components/HelloWorld.vue'
 import { add } from '@/utils/tools'
+let a = 1
 console.log(add(1, 1))
 </script>
 
