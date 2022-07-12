@@ -1,0 +1,28 @@
+{
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint":true,
+        "source.fixAll.stylelint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "eslint.validate": [
+        "vue",
+        "js",
+        "ts"
+    ],
+    "[vue]":{
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    // "[css]":{
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    //     "editor.formatOnSave": true
+    // },
+    "stylelint.validate": ["css", "less", "scss"],
+    "stylelint.enable": true,
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+}

@@ -1,14 +1,18 @@
 {
-  "name": "code-less",
-  "version": "0.0.0",
+  "name": "vite-template",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "serve": "vite preview",
     "test": "jest",
-    "lint": "eslint --fix --ext .js,.vue,.jsx,.tsx,.ts src tests --no-error-on-unmatched-pattern",
-    "prepare":"husky install",
-    "pre-commit": "lint-staged"
+    "typecheck": "vue-tsc --noEmit --skipLibCheck",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx,.vue src",
+    "lint:style": "stylelint src/**/*.{css,scss,vue} --fix",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "deploy": "yarn build && sh scripts/deploy.sh 10.9.242.23",
+    "tar": "yarn build && tar -zcvf workflow.tar dist"
   },
   "dependencies": {
     "vue": "^3.2.16"
@@ -33,16 +37,26 @@
     "jest-transform-stub": "^2.0.0",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.0",
+    "sass": "^1.53.0",
+    "stylelint": "^13.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^26.0.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-jest": "^5.0.0-alpha.10",
-    "vue-tsc": "^0.3.0"
+    "vue-tsc": "^0.38.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
       "yarn test --findRelatedTests",
       "eslint --fix"
+    ],
+    "*.{css,scss,vue}": [
+      "stylelint --fix"
     ]
   }
 }

@@ -3,18 +3,19 @@
     // "importHelpers": true,
     // "allowSyntheticDefaultImports": true,
     // "skipLibCheck": true,
-
-   
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "outDir": "dist",
     "target": "esnext",
     "useDefineForClassFields": true,
+    "strictNullChecks": false,
     "module": "esnext",
-    
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
-   
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types":["vite/client","jest"],
