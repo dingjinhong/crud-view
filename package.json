@@ -1,5 +1,5 @@
 {
-  "name": "vite-template",
+  "name": "crud-view",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
@@ -12,12 +12,13 @@
     "prepare": "husky install",
     "pre-commit": "lint-staged",
     "deploy": "yarn build && sh scripts/deploy.sh 10.9.242.23",
-    "tar": "yarn build && tar -zcvf workflow.tar dist"
-  },
-  "dependencies": {
-    "vue": "^3.2.16"
+    "tar": "yarn build && tar -zcvf workflow.tar dist",
+    "build:lib":"vite build --mode lib",
+    "generate-lib-dts":"vue-tsc --declaration --skipLibCheck --allowJs --emitDeclarationOnly --jsx preserve --outDir ./types ./src/CrudView/index.vue"
   },
   "devDependencies": {
+    "@element-plus/icons": "^0.0.11",
+    "element-plus": "^2.2.12",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
@@ -45,7 +46,8 @@
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
     "vue-jest": "^5.0.0-alpha.10",
-    "vue-tsc": "^0.38.3"
+    "vue-tsc": "^0.38.3",
+    "vue": "^3.2.37"
   },
   "engines": {
     "node": ">=14.0.0"
