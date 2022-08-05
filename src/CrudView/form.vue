@@ -369,7 +369,7 @@ const buttons = computed(() => {
       },
       order: 0,
       topic: 'confirm',
-      icon: 'el-icon-search',
+      //icon: 'el-icon-search',
       label: '确认',
       ...props.handle.confirmButton
     })

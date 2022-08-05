@@ -83,7 +83,9 @@
             @click="expand = !expand"
           >
             <span class="label">{{ options.expandText }}</span>
-            <i :class="['icon el-icon-arrow-up', expand ? '' : 'is-reverse']" />
+            <el-icon :class="['handle-expand-icon', expand ? '' : 'is-reverse']"
+              ><ArrowUp
+            /></el-icon>
           </div>
         </el-form-item>
         <el-form-item>
@@ -198,9 +200,10 @@ import {
   ElFormItem,
   ElCollapseTransition,
   ElCascader,
-  ElTimePicker
+  ElTimePicker,
+  ElIcon
 } from 'element-plus'
-
+import { ArrowUp } from '@element-plus/icons'
 const props = defineProps({
   options: {
     type: Object,
@@ -307,7 +310,7 @@ const buttons = computed(() => {
     },
     order: 0,
     topic: 'reset',
-    icon: 'el-icon-search',
+    //icon: 'el-icon-search',
     text: '重置',
     ...(props.options.resetButton ? props.options.resetButton : {})
   })
@@ -334,7 +337,7 @@ const buttons = computed(() => {
     },
     order: 0,
     topic: 'submit',
-    icon: 'el-icon-search',
+    //icon: 'el-icon-search',
     text: '查询',
     ...(props.options.submitButton ? props.options.submitButton : {}),
     show: !props.options.searchWhenChange
@@ -437,8 +440,10 @@ const _getRemoteMethod = (s) => {
       .handle-expand {
         cursor: pointer;
         color: #6296ff;
+        display: flex;
+        align-items: center;
 
-        .le-icon-arrow-up {
+        .handle-expand-icon {
           transition: all 0.3s;
         }
 

@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-
+import { Edit, Remove, View } from '@element-plus/icons'
 export const cardActionProps = {
   data: {
     type: Object,
@@ -70,7 +70,7 @@ export const ActionMixins = function (actionOptions, data, emitFn) {
       },
       topic: 'view-form',
       order: 0,
-      icon: 'view',
+      icon: View,
       label: '查看',
       ...viewButton
     })
@@ -92,7 +92,7 @@ export const ActionMixins = function (actionOptions, data, emitFn) {
       },
       order: 1,
       topic: 'eidt-form',
-      icon: 'edit',
+      icon: Edit,
       label: '编辑',
       ...editButton
     })
@@ -118,7 +118,7 @@ export const ActionMixins = function (actionOptions, data, emitFn) {
       },
       order: 2,
       topic: 'remove-form',
-      icon: 'remove',
+      icon: Remove,
       label: '删除',
       ...removeButton
     })

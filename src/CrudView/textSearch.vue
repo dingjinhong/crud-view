@@ -86,18 +86,4 @@ const onChange = (val: string) => {
     }
   }
 }
-
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-
-  .input-label {
-    font-size: 14px;
-    line-height: 20px;
-    text-align: left;
-    color: #333;
-    flex: none;
-  }
-}
 </style>

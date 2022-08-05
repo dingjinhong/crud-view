@@ -31,6 +31,16 @@ const config: CrudConfig = {
       editForm: {}
     },
     code: {
+      search: {
+        label: '字典项内容',
+        type: 'search',
+        inHide: true,
+        props: {
+          placeholder: '请输入字典项内容',
+          suffixIcon: 'Search',
+          clearable: true
+        }
+      },
       content: {
         label: '字典项内容',
         order: 2,

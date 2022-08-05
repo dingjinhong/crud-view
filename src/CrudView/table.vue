@@ -94,7 +94,10 @@
                         ? options.rowHandle.dropdown.text || '更多'
                         : '更多'
                     }}
-                    <el-icon class="el-icon--right">
+                    <el-icon
+                      v-if="options.rowHandle.dropdown.showArrow"
+                      class="el-icon--right"
+                    >
                       <arrow-down />
                     </el-icon>
                   </el-button>
@@ -192,14 +195,14 @@ const onSortChange = ({ column, prop, order }) => {
     .row-handle-dropdown {
       margin-left: 10px;
 
-      .el-dropdown-link {
-        cursor: pointer;
-        color: #409eff;
-      }
+      // .el-dropdown-link {
+      //   cursor: pointer;
+      //   color: #409eff;
+      // }
 
-      .el-icon-arrow-down {
-        font-size: 12px;
-      }
+      // .el-icon-arrow-down {
+      //   font-size: 12px;
+      // }
     }
   }
 }

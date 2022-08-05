@@ -98,10 +98,11 @@
               actionOptions.dropdown
                 ? actionOptions.dropdown.text || '更多'
                 : '更多'
-            }}<i
+            }}<el-icon
               v-if="actionOptions.dropdown.showArrow"
-              class="el-icon-arrow-down el-icon--right"
-            />
+              class="el-icon--right"
+              ><arrow-down
+            /></el-icon>
           </el-button>
           <template #dropdown>
             <el-dropdown-menu>
@@ -247,9 +248,9 @@ const getActionStyle = () => {
         color: #409eff;
       }
 
-      .el-icon-arrow-down {
-        font-size: 12px;
-      }
+      // .el-icon-arrow-down {
+      //   font-size: 12px;
+      // }
     }
   }
 }
