@@ -1,4 +1,4 @@
-import type LeftToolbarHandle from './LeftToolBarHandle'
+import type LeftToolbarHandle from './LeftToolbarHandle'
 import type ToolbarHandle from './ToolbarHandle'
 
 export default interface Toolbar {
