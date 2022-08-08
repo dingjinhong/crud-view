@@ -358,7 +358,7 @@ const buttons = computed(() => {
   })
   btns.splice(btns.length, 0, ...custom)
   btns.sort((a, b) => {
-    return a.order - b.order
+    return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
   })
   return btns
 })

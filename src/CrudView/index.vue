@@ -462,22 +462,22 @@ watch(
       // console.log('addFormAttrs',
       //   addFormAttrs)
       addFormAttrs.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       viewFormAttrs.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       editFormAttrs.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       shl.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       ssl.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       columns.sort((a, b) => {
-        return b.order || 0 - a.order || 0
+        return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
       })
       searchHideList.value = shl
       searchShowList.value = ssl

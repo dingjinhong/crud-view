@@ -141,7 +141,7 @@ export const ActionMixins = function (actionOptions, data, emitFn) {
     }
     btns = btns.filter((f) => f.show)
     btns.sort((a, b) => {
-      return a.order - b.order
+      return (b.order || 0) - (a.order || 0) > 0 ? -1 : 1
     })
     return btns
   })
